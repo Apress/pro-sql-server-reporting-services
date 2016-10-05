@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRSViewer", "SRSViewer.csproj", "{308E8BC8-76CB-4573-9508-515326A66EC9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{308E8BC8-76CB-4573-9508-515326A66EC9}.Debug.ActiveCfg = Debug|.NET
+		{308E8BC8-76CB-4573-9508-515326A66EC9}.Debug.Build.0 = Debug|.NET
+		{308E8BC8-76CB-4573-9508-515326A66EC9}.Release.ActiveCfg = Release|.NET
+		{308E8BC8-76CB-4573-9508-515326A66EC9}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

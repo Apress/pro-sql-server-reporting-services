@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox6">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <BackgroundColor>CornflowerBlue</BackgroundColor>
+          <FontSize>18pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>White</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Height>0.375in</Height>
+        <Width>16.375in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>Report Execution Log</Value>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+              <ZIndex>12</ZIndex>
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>0.9375in</Height>
+        <Style />
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="RowCount">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <ZIndex>3</ZIndex>
+                    <rd:DefaultName>RowCount</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!RowCount.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="ByteCount">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <ZIndex>2</ZIndex>
+                    <rd:DefaultName>ByteCount</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!ByteCount.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="TimeRendering">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <ZIndex>1</ZIndex>
+                    <rd:DefaultName>TimeRendering</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!TimeRendering.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="TimeProcessing">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <rd:DefaultName>TimeProcessing</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!TimeProcessing.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.3125in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>0.875in</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>1.125in</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>0.875in</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>0.875in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>DataSet1</DataSetName>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="Column_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields( Parameters!Column_group.Value).Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Format">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <TextAlign>Left</TextAlign>
+                    <Color>Maroon</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>11</ZIndex>
+                  <rd:DefaultName>Format</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields( Parameters!Column_group.Value).Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.3125in</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <Height>0.3125in</Height>
+            <StaticColumns>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>10</ZIndex>
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>Row Count</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox3">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>9</ZIndex>
+                    <rd:DefaultName>textbox3</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>Byte Count</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox4">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>8</ZIndex>
+                    <rd:DefaultName>textbox4</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>Time Rendering</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox5">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>7</ZIndex>
+                    <rd:DefaultName>textbox5</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>Time Processing</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+            </StaticColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>8.5in</Width>
+        <Top>0.5in</Top>
+        <Left>0.125in</Left>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="User">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!UserName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!UserName.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="UserName">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <rd:DefaultName>UserName</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!UserName.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1.625in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="Machine">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!InstanceName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="InstanceName">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <TextDecoration>Underline</TextDecoration>
+                    <Color>MidnightBlue</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>5</ZIndex>
+                  <rd:DefaultName>InstanceName</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!InstanceName.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>0.875in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="Report_Name">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Report_Name.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Report_Name">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <Color>CornflowerBlue</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <rd:DefaultName>Report_Name</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Report_Name.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>2.25in</Width>
+          </RowGrouping>
+        </RowGroupings>
+      </Matrix>
+    </ReportItems>
+    <Style />
+    <Height>2in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="RSExecutionLog">
+      <rd:DataSourceID>a13b9735-de27-4da5-bd75-68a8c0dc31b7</rd:DataSourceID>
+      <DataSourceReference>RSExecutionLog</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>18.1875in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InstanceName">
+          <DataField>InstanceName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Request_Name">
+          <DataField>Request Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Format">
+          <DataField>Format</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TimeStart">
+          <DataField>TimeStart</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TimeEnd">
+          <DataField>TimeEnd</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TimeDataRetrieval">
+          <DataField>TimeDataRetrieval</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TimeProcessing">
+          <DataField>TimeProcessing</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TimeRendering">
+          <DataField>TimeRendering</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ByteCount">
+          <DataField>ByteCount</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="RowCount">
+          <DataField>RowCount</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Report_Name">
+          <DataField>Report Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Source_Type">
+          <DataField>Source Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReportKey">
+          <DataField>ReportKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ReportID">
+          <DataField>ReportID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>RSExecutionLog</DataSourceName>
+        <CommandText>SELECT     Users.UserName, Machines.InstanceName, StatusCodes.Status, RequestTypes.Name AS [Request Name], FormatTypes.Format, 
+                      ExecutionLogs.TimeStart, ExecutionLogs.TimeEnd, ExecutionLogs.TimeDataRetrieval, ExecutionLogs.TimeProcessing, ExecutionLogs.TimeRendering, 
+                      ExecutionLogs.ByteCount, ExecutionLogs.[RowCount], Reports.Name AS [Report Name], SourceTypes.Name AS [Source Type], Reports.ReportKey, 
+                      Reports.ReportID
+FROM         ExecutionLogs INNER JOIN
+                      Users ON ExecutionLogs.UserKey = Users.UserKey INNER JOIN
+                      StatusCodes ON ExecutionLogs.StatusCode = StatusCodes.StatusCode INNER JOIN
+                      RequestTypes ON ExecutionLogs.RequestType = RequestTypes.RequestType INNER JOIN
+                      Machines ON ExecutionLogs.MachineKey = Machines.MachineKey INNER JOIN
+                      FormatTypes ON ExecutionLogs.FormatType = FormatTypes.FormatType INNER JOIN
+                      Reports ON ExecutionLogs.ReportKey = Reports.ReportKey INNER JOIN
+                      SourceTypes ON ExecutionLogs.SourceType = SourceTypes.SourceType
+WHERE     (Machines.InstanceName &lt;&gt; 'RS05')</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>2f62f067-460e-4843-9994-d8d529f6cd62</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="Column_group">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Format</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Column Group</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Source_Type</Value>
+            <Label>Source Type</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Format</Value>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

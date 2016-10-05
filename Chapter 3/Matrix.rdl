@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+              <ZIndex>3</ZIndex>
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>0.5in</Height>
+        <Style />
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Estimated_Cost">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>C</Format>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <rd:DefaultName>Estimated_Cost</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!Estimated_Cost.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.25in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>2.125in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>Pro_SRS_DS</DataSetName>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Year.Value &amp; " - " &amp; Fields!Month.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox2">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <rd:DefaultName>textbox2</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Year.Value &amp; " - " &amp; Fields!Month.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>4.125in</Width>
+        <Top>0.125in</Top>
+        <Left>0.125in</Left>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_Patient_Name">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Patient_Name.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Patient_Name">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <rd:DefaultName>Patient_Name</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Patient_Name.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>2in</Width>
+          </RowGrouping>
+        </RowGroupings>
+      </Matrix>
+    </ReportItems>
+    <Style />
+    <Height>4.625in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="Pro_SRS">
+      <rd:DataSourceID>231115f4-d057-4f5a-8e4c-1bbf34e64cac</rd:DataSourceID>
+      <DataSourceReference>Pro_SRS</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>20in</Width>
+  <DataSets>
+    <DataSet Name="Pro_SRS_DS">
+      <Fields>
+        <Field Name="PatID">
+          <DataField>PatID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Patient_Name">
+          <DataField>Patient Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Employee_Name">
+          <DataField>Employee Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeClassID">
+          <DataField>EmployeeClassID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Service_Type">
+          <DataField>Service Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estimated_Cost">
+          <DataField>Estimated Cost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Visit_Count">
+          <DataField>Visit_Count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Diagnosis">
+          <DataField>Diagnosis</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ServiceTypeID">
+          <DataField>ServiceTypeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Pro_SRS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>emp_svc_cost</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ServiceMonth">
+            <Value>=Parameters!ServiceMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServiceYear">
+            <Value>=Parameters!ServiceYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BranchID">
+            <Value>=Parameters!BranchID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EmployeeTblID">
+            <Value>=Parameters!EmployeeTblID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServicesLogCtgryID">
+            <Value>=Parameters!ServicesLogCtgryID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description />
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>f31cd3d0-8c74-4392-aa5f-ce79dcf9d22c</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="ServiceMonth">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>9</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceMonth</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiceYear">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>2003</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceYear</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BranchID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>BranchID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmployeeTblID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>EmployeeTblID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServicesLogCtgryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServicesLogCtgryID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

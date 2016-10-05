@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Chart Name="chart1">
+        <ThreeDProperties>
+          <Enabled>true</Enabled>
+          <Rotation>30</Rotation>
+          <Inclination>20</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+          <DrawingStyle>Cylinder</DrawingStyle>
+        </ThreeDProperties>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <Palette>Light</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Visit_Count.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style />
+                  <Value>=sum(Fields!Visit_Count.Value)</Value>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <DataSetName>Pro_SRS_DS</DataSetName>
+        <PointWidth>0</PointWidth>
+        <Type>Bar</Type>
+        <Top>0.375in</Top>
+        <Title />
+        <Width>7.375in</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Patient_Name.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!Patient_Name.Value</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <DynamicSeries>
+              <Grouping Name="chart1_SeriesGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Employee_Name.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!Employee_Name.Value</Label>
+            </DynamicSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Subtype>Stacked</Subtype>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>LightGrey</BackgroundColor>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+        </PlotArea>
+        <Left>0.125in</Left>
+        <ValueAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+      </Chart>
+    </ReportItems>
+    <Style />
+    <Height>4.625in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="Pro_SRS">
+      <rd:DataSourceID>231115f4-d057-4f5a-8e4c-1bbf34e64cac</rd:DataSourceID>
+      <DataSourceReference>Pro_SRS</DataSourceReference>
+    </DataSource>
+    <DataSource Name="HW84HUG">
+      <rd:DataSourceID>5b9597f4-dea6-4367-b8a3-a4cf63466d1a</rd:DataSourceID>
+      <DataSourceReference>HW84HUG</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>20in</Width>
+  <DataSets>
+    <DataSet Name="Pro_SRS_DS">
+      <Fields>
+        <Field Name="PatID">
+          <DataField>PatID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Patient_Name">
+          <DataField>Patient Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Employee_Name">
+          <DataField>Employee Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeClassID">
+          <DataField>EmployeeClassID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Service_Type">
+          <DataField>Service Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estimated_Cost">
+          <DataField>Estimated Cost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Visit_Count">
+          <DataField>Visit_Count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Diagnosis">
+          <DataField>Diagnosis</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ServiceTypeID">
+          <DataField>ServiceTypeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Pro_SRS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>emp_svc_cost</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ServiceMonth">
+            <Value>=Parameters!ServiceMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServiceYear">
+            <Value>=Parameters!ServiceYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BranchID">
+            <Value>=Parameters!BranchID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EmployeeTblID">
+            <Value>=Parameters!EmployeeTblID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ServicesLogCtgryID">
+            <Value>=Parameters!ServicesLogCtgryID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PatID">
+          <DataField>PatID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Dscr">
+          <DataField>Dscr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocumentImage">
+          <DataField>DocumentImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HW84HUG</DataSourceName>
+        <CommandText>SELECT     PatEMRDoc.PatID, PatEMRDoc.Dscr, DocumentImage.DocumentImage
+FROM         DocumentImage INNER JOIN
+                      PatEMRDoc ON DocumentImage.DocumentImageID = PatEMRDoc.DocumentImageID
+WHERE     (PatEMRDoc.PatID = 274) AND (PatEMRDoc.Dscr = 'Rodney')</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description />
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>f31cd3d0-8c74-4392-aa5f-ce79dcf9d22c</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="ServiceMonth">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>9</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceMonth</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiceYear">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>2003</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceYear</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BranchID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>BranchID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmployeeTblID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>EmployeeTblID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServicesLogCtgryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServicesLogCtgryID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

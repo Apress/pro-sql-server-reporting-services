@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Line Name="line1">
+        <ZIndex>1</ZIndex>
+        <Top>1in</Top>
+        <Height>0in</Height>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Left>0.125in</Left>
+      </Line>
+      <List Name="list1">
+        <Style />
+        <Height>0.875in</Height>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!PatID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <DataSetName>DataSet1</DataSetName>
+        <ReportItems>
+          <Textbox Name="City">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Top>0.59375in</Top>
+            <rd:DefaultName>City</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1.875in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=rtrim(Fields!City.Value) &amp; " " &amp; Fields!State.Value &amp; " " &amp; Fields!Zip.Value</Value>
+          </Textbox>
+          <Textbox Name="Address1">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Top>0.375in</Top>
+            <rd:DefaultName>Address1</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!Address1.Value</Value>
+          </Textbox>
+          <Textbox Name="LastName">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Top>0.125in</Top>
+            <rd:DefaultName>LastName</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1.875in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=rtrim(Fields!LastName.Value) &amp; ", " &amp; rtrim( Fields!FirstName.Value)</Value>
+          </Textbox>
+        </ReportItems>
+        <Left>0.125in</Left>
+      </List>
+    </ReportItems>
+    <Style />
+    <Height>2in</Height>
+    <ColumnSpacing>0.1in</ColumnSpacing>
+    <Columns>4</Columns>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="Pro_SRS">
+      <rd:DataSourceID>231115f4-d057-4f5a-8e4c-1bbf34e64cac</rd:DataSourceID>
+      <DataSourceReference>Pro_SRS</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>2.125in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PatServerID">
+          <DataField>PatServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PatID">
+          <DataField>PatID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MRNumberServerID">
+          <DataField>MRNumberServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MRNumberID">
+          <DataField>MRNumberID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HospitalID">
+          <DataField>HospitalID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MI">
+          <DataField>MI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HomePhone">
+          <DataField>HomePhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkPhone">
+          <DataField>WorkPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOB">
+          <DataField>DOB</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SSN">
+          <DataField>SSN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sex">
+          <DataField>Sex</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RaceID">
+          <DataField>RaceID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaritalStatusID">
+          <DataField>MaritalStatusID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmploymentStatusID">
+          <DataField>EmploymentStatusID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrigBranchID">
+          <DataField>OrigBranchID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DirectionServerID">
+          <DataField>DirectionServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DirectionID">
+          <DataField>DirectionID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MilesFromOffice">
+          <DataField>MilesFromOffice</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SchedAreaServerID">
+          <DataField>SchedAreaServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SchedAreaID">
+          <DataField>SchedAreaID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RefSrcServerID">
+          <DataField>RefSrcServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RefSrcID">
+          <DataField>RefSrcID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DunnMsg">
+          <DataField>DunnMsg</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Statements">
+          <DataField>Statements</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UserDefined1">
+          <DataField>UserDefined1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserDefined2">
+          <DataField>UserDefined2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserDefined3">
+          <DataField>UserDefined3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactLastName">
+          <DataField>EmerContactLastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactFirstName">
+          <DataField>EmerContactFirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactMI">
+          <DataField>EmerContactMI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactAddress1">
+          <DataField>EmerContactAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactAddress2">
+          <DataField>EmerContactAddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactCity">
+          <DataField>EmerContactCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactState">
+          <DataField>EmerContactState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactZip">
+          <DataField>EmerContactZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactHomePhone">
+          <DataField>EmerContactHomePhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactWorkPhone">
+          <DataField>EmerContactWorkPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmerContactRelationship">
+          <DataField>EmerContactRelationship</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DirectionsToPatHome">
+          <DataField>DirectionsToPatHome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AdmitDate">
+          <DataField>AdmitDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PatientPicture">
+          <DataField>PatientPicture</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="PatGroupServerID">
+          <DataField>PatGroupServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PatGroupID">
+          <DataField>PatGroupID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CountyServerID">
+          <DataField>CountyServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CountyID">
+          <DataField>CountyID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BillToLastName">
+          <DataField>BillToLastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToFirstName">
+          <DataField>BillToFirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToMI">
+          <DataField>BillToMI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddress1">
+          <DataField>BillToAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddress2">
+          <DataField>BillToAddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToCity">
+          <DataField>BillToCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToState">
+          <DataField>BillToState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToZip">
+          <DataField>BillToZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToHomePhone">
+          <DataField>BillToHomePhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToWorkPhone">
+          <DataField>BillToWorkPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToRelationship">
+          <DataField>BillToRelationship</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MedicareNum">
+          <DataField>MedicareNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MedicaidNum">
+          <DataField>MedicaidNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReligionServerID">
+          <DataField>ReligionServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ReligionTblID">
+          <DataField>ReligionTblID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PlaceOfWorshipServerID">
+          <DataField>PlaceOfWorshipServerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PlaceOfWorshipTblID">
+          <DataField>PlaceOfWorshipTblID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HospicePeriod">
+          <DataField>HospicePeriod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HospicePeriodNote">
+          <DataField>HospicePeriodNote</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DoNotResuscitate">
+          <DataField>DoNotResuscitate</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Pro_SRS</DataSourceName>
+        <CommandText>select * from patient where lastname &lt;&gt; 'lastname' or patid &lt; 200</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description />
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>f31cd3d0-8c74-4392-aa5f-ce79dcf9d22c</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <Language>en-US</Language>
+</Report>

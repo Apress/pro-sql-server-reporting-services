@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox18">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontSize>18pt</FontSize>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <rd:DefaultName>textbox18</rd:DefaultName>
+        <Width>8.625in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>= "CRM Converted Leads Between" &amp; " " &amp;Parameters!CreatedFrom.Value &amp; " and " &amp; Parameters!CreatedTo.Value</Value>
+        <Left>0.125in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.375in</Height>
+  </PageHeader>
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table2">
+        <Height>0.75in</Height>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Opportunity Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Lead Source</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox35">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <rd:DefaultName>textbox35</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Converted On</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Estimated Close Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <Color>Gray</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Estimated Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Name">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextDecoration>Underline</TextDecoration>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightSteelBlue", "White")</BackgroundColor>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>Name</rd:DefaultName>
+                      <Action>
+                        <Hyperlink>="http://hwcs03/SFA/opps/edit.aspx?id={"&amp; Fields!OpportunityId.Value &amp;"}"</Hyperlink>
+                      </Action>
+                      <CanGrow>true</CanGrow>
+                      <Value>=rownumber(Nothing) &amp; " - " &amp; Fields!Name.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Value">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>d</Format>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightSteelBlue", "White")</BackgroundColor>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>Value</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Value.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CreatedOn">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>d</Format>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightSteelBlue", "White")</BackgroundColor>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>CreatedOn</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CreatedOn.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="EstimatedCloseDate">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>d</Format>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightSteelBlue", "White")</BackgroundColor>
+                        <TextAlign>Left</TextAlign>
+                        <Color>Firebrick</Color>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <rd:DefaultName>EstimatedCloseDate</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EstimatedCloseDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="EstimatedValue">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <Format>C</Format>
+                        <TextDecoration>Underline</TextDecoration>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightSteelBlue", "White")</BackgroundColor>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <rd:DefaultName>EstimatedValue</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EstimatedValue.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!CreatedOn.Value</SortExpression>
+              <Direction>Descending</Direction>
+            </SortBy>
+          </Sorting>
+        </Details>
+        <DataSetName>Activities</DataSetName>
+        <Top>0.125in</Top>
+        <Width>8.625in</Width>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=countrows()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OpportunityId">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <rd:DefaultName>OpportunityId</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox29">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <TableColumns>
+          <TableColumn>
+            <Width>3.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>4.5in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="HealthWare_Corporation_MSCRM">
+      <rd:DataSourceID>9d5e99c8-35a6-41a5-9b07-1af2f1eece7a</rd:DataSourceID>
+      <DataSourceReference>HealthWare_Corporation_MSCRM</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>14.29167in</Width>
+  <DataSets>
+    <DataSet Name="Activities">
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatusCode">
+          <DataField>StatusCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EstimatedValue">
+          <DataField>EstimatedValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="EstimatedCloseDate">
+          <DataField>EstimatedCloseDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Value">
+          <DataField>Value</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumberOfEmployees">
+          <DataField>NumberOfEmployees</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SIC">
+          <DataField>SIC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Lead_Contact">
+          <DataField>Lead Contact</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IndustryCode">
+          <DataField>IndustryCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OpportunityId">
+          <DataField>OpportunityID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>SELECT     OpportunityBase.Name, OpportunityBase.StatusCode, OpportunityBase.EstimatedValue, OpportunityBase.EstimatedCloseDate, 
+                      OpportunityBase.CreatedOn, StringMap.Value, LeadBase.NumberOfEmployees, LeadBase.SIC, LeadBase.FullName AS [Lead Contact], 
+                      LeadBase.IndustryCode, CAST(OpportunityBase.OpportunityId AS nvarchar(80)) AS OpportunityID
+FROM         OpportunityBase INNER JOIN
+                      LeadBase ON OpportunityBase.OriginatingLeadId = LeadBase.LeadId LEFT OUTER JOIN
+                      StringMap ON LeadBase.LeadSourceCode = StringMap.AttributeValue AND StringMap.AttributeName = 'leadsourcecode'
+WHERE     (OpportunityBase.CreatedOn BETWEEN @CreatedFrom AND @CreatedTo) AND (OpportunityBase.StatusCode NOT IN (4, 5))
+ORDER BY OpportunityBase.Name</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@CreatedFrom">
+            <Value>=Parameters!CreatedFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CreatedTo">
+            <Value>=Parameters!CreatedTo.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="User">
+      <Fields>
+        <Field Name="fullname">
+          <DataField>fullname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HealthWare_Corporation_MSCRM</DataSourceName>
+        <CommandText>select distinct fullname from systemuserbase</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>56197869-c103-4a98-8a4d-b716363050ae</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="CreatedFrom">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>01/01/01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Date Lead Converted From</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CreatedTo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=now()</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Date Lead Converted To</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

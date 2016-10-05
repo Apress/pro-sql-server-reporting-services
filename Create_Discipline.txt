@@ -1,0 +1,69 @@
+Use Pro_SRS
+Go
+
+CREATE TABLE [dbo].[Discipline] (
+	[DisciplineServerID] [int] NULL ,
+	[DisciplineTblID] [int] NULL ,
+	[DisciplineID] [char] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[Dscr] [char] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[MandatoryVisit] [smallint] NOT NULL ,
+	[ColorCode] [int] NOT NULL ,
+	[AlternateID] [char] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+
+Insert Into Discipline Values (1,1,'PT'        ,'PHYSICAL THERAPIST'          ,0,15,NULL)
+Insert Into Discipline Values (1,4,'HHA'       ,'HOME HEALTH AID'             ,0,14,NULL)
+Insert Into Discipline Values (1,5,'PCA'       ,'PERSONAL CARE ASSISTANT'          ,0,15,NULL )
+Insert Into Discipline Values (1,6,'CNA'       ,'CERTIFIED NURSING ASSISTANT'      ,0,14,NULL )
+Insert Into Discipline Values (1,7,'LPN'       ,'LICENSED PRACTICAL NURSE'         ,0,15,NULL )
+Insert Into Discipline Values (1,8,'OT'        ,'OCCUPATIONAL THERAPIST'           ,0,15,NULL )
+Insert Into Discipline Values (1,9,'ADM'       ,'ADMINISTRATION'                   ,0,11,NULL )
+Insert Into Discipline Values (1,10,'ST'        ,'SPEECH THERAPIST'                ,0,15,NULL )
+Insert Into Discipline Values (1,11,'MSW'       ,'MEDICAL SOCIAL WORKER'           ,0,15,NULL)
+Insert Into Discipline Values (1,12,'HOMEM'     ,'HOME MAKER'                      ,0,15,NULL)
+Insert Into Discipline Values (1,13,'BC'        ,'BEREAVEMENT COORDINATOR'         ,0,5,NULL)
+Insert Into Discipline Values (1,14,'RN'        ,'SKILLED NURSING'                 ,0,9,NULL )
+Insert Into Discipline Values (1,16,'CL'        ,'CLERGY'                          ,0,15,NULL)
+Insert Into Discipline Values (1,17,'PTA'       ,'PHYSICAL THERAPY ASSISTANT'      ,0,15,NULL)
+Insert Into Discipline Values (1,18,'OTA'       ,'OCCUPATIONAL THERAPY ASSISTANT'  ,0,15,NULL)
+
+           
+Grant Select on Discipline to Public
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

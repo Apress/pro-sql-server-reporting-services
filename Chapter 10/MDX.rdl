@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+              <ZIndex>8</ZIndex>
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>0.875in</Height>
+        <Style />
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Measures_Quantity">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>g</Format>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>2</ZIndex>
+                    <rd:DefaultName>Measures_Quantity</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=sum(Fields!Measures_Quantity.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Measures_Cost">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>c0</Format>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>1</ZIndex>
+                    <rd:DefaultName>Measures_Cost</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=sum(Fields!Measures_Cost.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Measures_Average_Cost_Per_Service">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>c0</Format>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <rd:DefaultName>Measures_Average_Cost_Per_Service</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=sum(Fields!Measures_Average_Cost_Per_Service.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.25in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1.125in</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>1.75in</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>1.25in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>DataSet1</DataSetName>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <Height>0.625in</Height>
+            <StaticColumns>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <BackgroundColor>LightSkyBlue</BackgroundColor>
+                      <FontSize>12pt</FontSize>
+                      <TextAlign>Left</TextAlign>
+                      <Color>Brown</Color>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>7</ZIndex>
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>Quantity</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox4">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <BackgroundColor>LightSkyBlue</BackgroundColor>
+                      <FontSize>12pt</FontSize>
+                      <TextAlign>Left</TextAlign>
+                      <Color>Brown</Color>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>6</ZIndex>
+                    <rd:DefaultName>textbox4</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value> Cost</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="textbox5">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <BackgroundColor>LightSkyBlue</BackgroundColor>
+                      <FontSize>12pt</FontSize>
+                      <TextAlign>Left</TextAlign>
+                      <Color>Brown</Color>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                      <FontWeight>700</FontWeight>
+                    </Style>
+                    <ZIndex>5</ZIndex>
+                    <rd:DefaultName>textbox5</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value> Average Cost </Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+            </StaticColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>7.125in</Width>
+        <Top>0.25in</Top>
+        <Left>0.375in</Left>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_Service_Type_Service_Type">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Service_Type_Service_Type.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Service_Type_Service_Type">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>Silver</BackgroundColor>
+                    <FontSize>12pt</FontSize>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <rd:DefaultName>Service_Type_Service_Type</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Iif(Fields!Service_Type_Service_Type.Value = "V", "Visits",Fields!Service_Type_Service_Type.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>0.625in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_Service_Type_Dscr">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Service_Type_Dscr.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Service_Type_Dscr">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>Silver</BackgroundColor>
+                    <BorderColor>
+                      <Default>MediumBlue</Default>
+                    </BorderColor>
+                    <BorderStyle>
+                      <Bottom>Solid</Bottom>
+                    </BorderStyle>
+                    <FontSize>12pt</FontSize>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <rd:DefaultName>Service_Type_Dscr</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Service_Type_Dscr.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>2.375in</Width>
+          </RowGrouping>
+        </RowGroupings>
+      </Matrix>
+    </ReportItems>
+    <Style />
+    <Height>2in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AS_DB">
+      <rd:DataSourceID>8936c563-8872-434c-9ee6-18a6005b17ec</rd:DataSourceID>
+      <DataSourceReference>AS_DB</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>10.875in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Service_Type_Service_Type">
+          <DataField>[Service Type].[Service Type].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Service_Type_Dscr">
+          <DataField>[Service Type].[Dscr].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Charge_Time_Year">
+          <DataField>[Charge Time].[Year].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Charge_Time_Quarter">
+          <DataField>[Charge Time].[Quarter].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Charge_Time_Month">
+          <DataField>[Charge Time].[Month].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Charge_Time_Day">
+          <DataField>[Charge Time].[Day].[MEMBER_CAPTION]</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Charge">
+          <DataField>[Measures].[Charge]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Payment">
+          <DataField>[Measures].[Payment]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Adjustment">
+          <DataField>[Measures].[Adjustment]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Quantity">
+          <DataField>[Measures].[Quantity]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Cost">
+          <DataField>[Measures].[Cost]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="Measures_Average_Cost_Per_Service">
+          <DataField>[Measures].[Average Cost Per Service]</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AS_DB</DataSourceName>
+        <CommandText>With Member [Measures].[Average Cost Per Service] as '([Measures].[cost]) / ( [Measures].[quantity])'
+SELECT {AddCalculatedMembers([Measures].members)} on columns,
+NON EMPTY CROSSJOIN({DESCENDANTS([Service Type].[All Service Type],[Service Type].[Service Type], SELF_AND_AFTER)},{DESCENDANTS( [Charge Time].[2003],[Year],Self_And_After)}) on rows
+FROM Finance</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>73af163b-551b-477f-93f3-7a969c2325a2</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <Language>en-US</Language>
+</Report>

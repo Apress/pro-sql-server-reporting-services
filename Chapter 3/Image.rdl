@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Style />
+        <Height>1.5in</Height>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!DocumentLength.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <PageBreakAtEnd>true</PageBreakAtEnd>
+        <Width>5.125in</Width>
+        <DataSetName>Get_Image</DataSetName>
+        <ReportItems>
+          <Image Name="image1">
+            <ZIndex>10</ZIndex>
+            <Top>0.375in</Top>
+            <MIMEType>image/jpeg</MIMEType>
+            <Height>0.75in</Height>
+            <Width>0.75in</Width>
+            <Source>Database</Source>
+            <Style />
+            <Value>=Fields!DocumentImage.Value</Value>
+            <Left>2.875in</Left>
+            <Sizing>AutoSize</Sizing>
+          </Image>
+          <Textbox Name="textbox5">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Color>Firebrick</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <Top>1.125in</Top>
+            <Height>0.25in</Height>
+            <Width>0.5in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>DNR:</Value>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Color>Firebrick</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <Top>0.875in</Top>
+            <Height>0.25in</Height>
+            <Width>0.5in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>DOB</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Color>Firebrick</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <Top>0.625in</Top>
+            <Height>0.25in</Height>
+            <Width>0.625in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>Address</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Color>Firebrick</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <Top>0.375in</Top>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>Patient Name</Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Color>Firebrick</Color>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <Top>0.125in</Top>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>Patient ID #</Value>
+          </Textbox>
+          <Textbox Name="DoNotResuscitate">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Top>1.125in</Top>
+            <rd:DefaultName>DoNotResuscitate</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1.75in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Iif(Fields!DoNotResuscitate.Value = -1, "Do Not Resuscitate", "Resuscitate")</Value>
+            <Left>0.5in</Left>
+          </Textbox>
+          <Textbox Name="DOB">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <Format>d</Format>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Top>0.875in</Top>
+            <rd:DefaultName>DOB</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=First(Fields!DOB.Value)</Value>
+            <Left>0.5in</Left>
+          </Textbox>
+          <Textbox Name="PatID">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Top>0.125in</Top>
+            <rd:DefaultName>PatID</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!PatID.Value</Value>
+            <Left>1in</Left>
+          </Textbox>
+          <Textbox Name="City">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Top>0.625in</Top>
+            <rd:DefaultName>City</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1.75in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=rtrim(Fields!City.Value) &amp;
+" " &amp;
+Fields!State.Value &amp; 
+" " &amp;
+Fields!Zip.Value</Value>
+            <Left>0.625in</Left>
+          </Textbox>
+          <Textbox Name="LastName">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Left</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <Top>0.375in</Top>
+            <rd:DefaultName>LastName</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1.25in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=rtrim(Fields!LastName.Value) &amp; ",  " &amp; rtrim( Fields!FirstName.Value)</Value>
+            <Left>1in</Left>
+          </Textbox>
+        </ReportItems>
+      </List>
+    </ReportItems>
+    <Style />
+    <Height>4.625in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="Pro_SRS">
+      <rd:DataSourceID>78dc8139-bfdb-42f2-84f7-85ce41a618a8</rd:DataSourceID>
+      <DataSourceReference>Pro_SRS</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>8in</Width>
+  <DataSets>
+    <DataSet Name="Pat_Images">
+      <Fields>
+        <Field Name="DocumentImage">
+          <DataField>DocumentImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Pro_SRS</DataSourceName>
+        <CommandText>SELECT     DocumentImage
+FROM         DocumentImage
+WHERE     (UpdatedDate &gt; '06/01/04')</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="Get_Image">
+      <Fields>
+        <Field Name="DocumentImage">
+          <DataField>DocumentImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Dscr">
+          <DataField>Dscr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PatID">
+          <DataField>PatID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOB">
+          <DataField>DOB</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DoNotResuscitate">
+          <DataField>DoNotResuscitate</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DocumentLength">
+          <DataField>DocumentLength</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Pro_SRS</DataSourceName>
+        <CommandText>SELECT     DocumentImage.DocumentImage, PatEMRDoc.Dscr, Patient.PatID, Patient.LastName, Patient.FirstName, Patient.Address1, Patient.State, Patient.Zip, 
+                      Patient.City, Patient.DOB, Patient.DoNotResuscitate, DocumentImage.DocumentLength
+FROM         Patient INNER JOIN
+                      PatEMRDoc ON Patient.PatID = PatEMRDoc.PatID INNER JOIN
+                      DocumentImage ON PatEMRDoc.DocumentImageID = DocumentImage.DocumentImageID
+WHERE     (DocumentImage.UpdatedDate &gt; '06/01/04')</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description />
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>f31cd3d0-8c74-4392-aa5f-ce79dcf9d22c</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="ServiceMonth">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>9</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceMonth</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiceYear">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>2003</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceYear</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BranchID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>BranchID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmployeeTblID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>EmployeeTblID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServicesLogCtgryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ServicesLogCtgryID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>
